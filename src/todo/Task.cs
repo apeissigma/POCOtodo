@@ -3,41 +3,86 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Todo.Library;
 
 namespace Todo.App
 {
-    public class Task
+    public class Task : IDueDate, IAssignable, ICompleteable
     {
-        public string TaskName { get; set; }
-        public DateTime DueDate { get; set; }
-        public bool Status { get; set; }
+        public string taskName { get; set; }
 
-        public Task(string taskName)
+        //implement IDueDate
+        public DateTime dueDate { get; set; }
+        public bool isOverdue { get; set; }
+
+        //implement ICompleteable
+        public bool isComplete { get; set; }
+
+        //implement IAssignable
+        public bool isAssigned { get; set; }
+
+        public Account assignee { get; set; }
+
+
+        public Task(string tName)
         {
-            this.TaskName = taskName;
-            this.DueDate = (DateTime.Now).AddDays(1);
-            this.Status = false;
+            this.taskName = tName;
+            this.dueDate = (DateTime.Now).AddDays(5); //todo: add custom date setter 
+            this.isComplete = false;
+            this.isAssigned = false; 
         }
+
+        //implement IDueDate
+        public bool checkIfOverdue()
+        {
+            if (this.isOverdue) return true;
+            else return false; 
+        }
+
+        //implement ICompleteable
+        public void markComplete()
+        {
+            this.isAssigned = true;
+        }
+        public void markIncomplete()
+        {
+            this.isAssigned = false;
+        }
+        public bool checkIfComplete()
+        {
+            if (this.isAssigned) return true;
+            else return false;
+        }
+
+        //implement IAssignable
+        public string assignTo(Account account)
+        {
+            if (this.isAssigned) return "This task has already been assigned.";
+            this.assignee = account;
+            this.isAssigned = true;
+            return $"This task has been assigned to {account.FirstName} {account.LastName}.";
+        }
+
+
 
         public string DisplayTask()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.Append("-------------------------\n");
-            sb.Append($"{TaskName}\n");
+            sb.Append($"{this.taskName}\n");
             sb.Append("-------------------------\n");
 
-            if (Status)
-            {
-                sb.Append($"Status: Complete\n");
-            }
-            else { sb.Append($"Status: Not started\n"); }
+            if (this.isComplete) sb.Append($"Status: Complete\n");
+            else sb.Append($"Status: Not started\n");
 
-            sb.Append($"Due Date: {DueDate}\n");
+            sb.Append($"Due Date: {dueDate} ");
+            if (this.isOverdue) sb.Append("(Overdue)");
+
+            if (this.isAssigned) sb.Append($"Assigned to: {this.assignee.FirstName} {this.assignee.LastName}");
+
             return sb.ToString();
         }
-
-
 
     }
 }

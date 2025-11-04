@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "src\console\Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "src\test\Test.csproj", "{D362BF47-7A16-1187-7CFD-2213D496CB3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.App", "src\todo\Todo.App.csproj", "{3827112F-B9B1-0928-9A3D-0B4793690593}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Library", "src\todo\Todo.Library.csproj", "{3827112F-B9B1-0928-9A3D-0B4793690593}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

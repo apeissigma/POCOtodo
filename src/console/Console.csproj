@@ -8,9 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\POCOtodo\POCOtodo.csproj" />
     <ProjectReference Include="..\test\Test.csproj" />
-    <ProjectReference Include="..\todo\Todo.App.csproj" />
+    <ProjectReference Include="..\todo\Todo.Library.csproj" />
   </ItemGroup>
 
 </Project>
