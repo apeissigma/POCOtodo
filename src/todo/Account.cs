@@ -8,28 +8,17 @@ namespace Todo.Library
 {
     public class Account
     {
-        public int Id
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public int Id { get; set; }
 
-        public int FirstName
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public string FirstName { get; set; }
 
-        public int LastName
+        public string LastName { get; set; }
+
+        public Account(int id, string firstName, string lastName)
         {
-            get => default;
-            set
-            {
-            }
+            Id = id;
+            FirstName = firstName;
+            LastName = lastName;
         }
     }
 }

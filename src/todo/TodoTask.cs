@@ -7,7 +7,7 @@ using Todo.Library;
 
 namespace Todo.App
 {
-    public class Task : IDueDate, IAssignable, ICompleteable
+    public class TodoTask : IDueDate, IAssignable, ICompleteable
     {
         public string taskName { get; set; }
 
@@ -24,7 +24,7 @@ namespace Todo.App
         public Account assignee { get; set; }
 
 
-        public Task(string tName)
+        public TodoTask(string tName)
         {
             this.taskName = tName;
             this.dueDate = (DateTime.Now).AddDays(5); //todo: add custom date setter 
