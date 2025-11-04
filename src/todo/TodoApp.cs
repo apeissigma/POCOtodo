@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace POCOtodo
+namespace Todo.App
 {
     public class TodoApp
     {
-        public List<Task> Tasks = new List<Task>(); 
+        public List<Task> Tasks = new List<Task>();
 
         public TodoApp() { }
 
@@ -24,7 +25,7 @@ namespace POCOtodo
 
             foreach (Task task in tasks)
             {
-                Console.WriteLine(task.DisplayTask()); 
+                Console.WriteLine(task.DisplayTask());
             }
         }
         public void UpdateStatus(Task task)

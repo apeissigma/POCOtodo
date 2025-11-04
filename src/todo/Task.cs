@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Intrinsics.Arm;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace POCOtodo
+namespace Todo.App
 {
     public class Task
     {
@@ -12,11 +12,11 @@ namespace POCOtodo
         public DateTime DueDate { get; set; }
         public bool Status { get; set; }
 
-        public Task(string taskName) 
-        { 
+        public Task(string taskName)
+        {
             this.TaskName = taskName;
             this.DueDate = (DateTime.Now).AddDays(1);
-            this.Status = false; 
+            this.Status = false;
         }
 
         public string DisplayTask()
@@ -37,7 +37,7 @@ namespace POCOtodo
             return sb.ToString();
         }
 
-        
-           
+
+
     }
 }

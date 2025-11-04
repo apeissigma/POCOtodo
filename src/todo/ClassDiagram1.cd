@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="POCOtodo.Task">
-    <Position X="1.25" Y="1.25" Width="1.5" />
+  <Class Name="Todo.App.Task">
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAACAABAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Task.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="POCOtodo.TodoApp">
-    <Position X="3.5" Y="1.25" Width="1.5" />
+  <Class Name="Todo.App.TodoApp">
+    <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAEAAAAAAAAAAAAAAAAAAAABAAAAAAIAAAAAAA=</HashCode>
       <FileName>TodoApp.cs</FileName>
     </TypeIdentifier>
   </Class>
