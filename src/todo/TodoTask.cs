@@ -42,11 +42,11 @@ namespace Todo.App
         //implement ICompleteable
         public void markComplete()
         {
-            this.isAssigned = true;
+            this.isComplete = true;
         }
         public void markIncomplete()
         {
-            this.isAssigned = false;
+            this.isComplete = false;
         }
         public bool checkIfComplete()
         {
