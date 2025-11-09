@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Todo.Library;
 
-namespace Todo.App
+namespace Todo.Library
 {
     public class TodoTask : IDueDate, IAssignable, ICompleteable
     {
@@ -27,10 +27,34 @@ namespace Todo.App
         public TodoTask(string tName)
         {
             this.taskName = tName;
-            this.dueDate = (DateTime.Now).AddDays(5); //todo: add custom date setter 
+            this.dueDate = (DateTime.Now).AddDays(7);
             this.isComplete = false;
             this.isAssigned = false; 
         }
+        public TodoTask(string tName, int daysUntilDue)
+        {
+            this.taskName = tName;
+            this.dueDate = (DateTime.Now).AddDays(daysUntilDue); 
+            this.isComplete = false;
+            this.isAssigned = false;
+        }
+        public TodoTask(string tName, Account account)
+        {
+            this.taskName = tName;
+            this.dueDate = (DateTime.Now).AddDays(7); 
+            this.isComplete = false;
+            this.isAssigned = true;
+            this.assignee = account;
+        }
+        public TodoTask(string tName, int daysUntilDue, Account account)
+        {
+            this.taskName = tName;
+            this.dueDate = (DateTime.Now).AddDays(daysUntilDue);
+            this.isComplete = false;
+            this.isAssigned = true;
+            this.assignee = account;
+        }
+
 
         //implement IDueDate
         public bool checkIfOverdue()
@@ -50,7 +74,7 @@ namespace Todo.App
         }
         public bool checkIfComplete()
         {
-            if (this.isAssigned) return true;
+            if (this.isComplete) return true;
             else return false;
         }
 
